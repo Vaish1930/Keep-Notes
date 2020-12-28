@@ -1,12 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, View, LogBox } from "react-native";
+
+import Header from "./app/components/Header";
+import KeepScreen from "./app/components/screens/KeepScreen";
 
 export default function App() {
+  LogBox.ignoreLogs(["Setting a timer"]);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Header />
+      <KeepScreen />
     </View>
   );
 }
@@ -14,8 +19,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
 });
